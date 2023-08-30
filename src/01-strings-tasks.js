@@ -19,10 +19,9 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(a, b) {
-  return a+b;
+  return a + b;
 }
 
-console.log();
 
 /**
  * Returns the length of given string.
@@ -39,7 +38,6 @@ function getStringLength(a) {
   return a.length;
 }
 
-console.log();
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -58,7 +56,6 @@ function getStringFromTemplate(fn, ln) {
   return `Hello, ${fn} ${ln}!`;
 }
 
-console.log();
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -71,7 +68,7 @@ console.log();
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(str) {
-  return str.slice(7,-1);
+  return str.slice(7, -1);
 }
 
 
@@ -86,7 +83,7 @@ function extractNameFromTemplate(str) {
  *   'cat'       => 'c'
  */
 function getFirstChar(s) {
-	return s[0];
+  return s[0];
 }
 
 /**
@@ -101,7 +98,7 @@ function getFirstChar(s) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(s) {
-	return s.trim();
+  return s.trim();
 }
 
 /**
@@ -132,7 +129,7 @@ function repeatString(str, n) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, n) {
-	return str.indexOf(n)!==-1 ? str.replace(n,'') : str;
+  return str.indexOf(n) !== -1 ? str.replace(n, '') : str;
 }
 
 /**
@@ -147,7 +144,7 @@ function removeFirstOccurrences(str, n) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-	return str.slice(1,-1);
+  return str.slice(1, -1);
 }
 
 
@@ -162,7 +159,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(s) {
-	return s.toUpperCase();
+  return s.toUpperCase();
 }
 
 /**
@@ -208,18 +205,16 @@ function extractEmails(s) {
  *
  */
 function getRectangleString(w, h) {
-	let res = '┌┐\n└┘\n';
-	if (h>2) {
-		res= '┌┐\n'+('│'+' '.repeat(w-2)+'│\n').repeat(h-2)+'└┘\n';
-	}
-	if (w>2) {
-		res=res.replace('┌┐', '┌'+('─'.repeat(w-2))+'┐');
-		res=res.replace('└┘', '└'+'─'.repeat(w-2)+'┘');
-	}
-	return res;
+  let res = '┌┐\n└┘\n';
+  if (h > 2) {
+    res = `┌┐\n${(`│${' '.repeat(w - 2)}│\n`).repeat(h - 2)}└┘\n`;
+  }
+  if (w > 2) {
+    res = res.replace('┌┐', `┌${'─'.repeat(w - 2)}┐`);
+    res = res.replace('└┘', `└${'─'.repeat(w - 2)}┘`);
+  }
+  return res;
 }
-
-console.log('getRectangleString(3,3):\n' + getRectangleString(6,4));
 
 
 /**
@@ -239,23 +234,20 @@ console.log('getRectangleString(3,3):\n' + getRectangleString(6,4));
  *
  */
 function encodeToRot13(s) {
-	const alu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	const al = 'abcdefghijklmnopqrstuvwxyz';
-	let res='';
-	for (let i=0; i<s.length; i++) {
-		if (al.indexOf(s[i])!==-1) {
-			res+= al[al.indexOf(s[i]) > 12 ? al.indexOf(s[i]) - 13 : al.indexOf(s[i]) + 13]
-		} else if (alu.indexOf(s[i])!==-1) {
-			res+= alu[alu.indexOf(s[i]) > 12 ? alu.indexOf(s[i]) - 13 : alu.indexOf(s[i]) + 13]
-		} else {
-			res+=s[i];
-		}
-	}
-	return res;
+  const alu = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const al = 'abcdefghijklmnopqrstuvwxyz';
+  let res = '';
+  for (let i = 0; i < s.length; i += 1) {
+    if (al.indexOf(s[i]) !== -1) {
+      res += al[al.indexOf(s[i]) > 12 ? al.indexOf(s[i]) - 13 : al.indexOf(s[i]) + 13];
+    } else if (alu.indexOf(s[i]) !== -1) {
+      res += alu[alu.indexOf(s[i]) > 12 ? alu.indexOf(s[i]) - 13 : alu.indexOf(s[i]) + 13];
+    } else {
+      res += s[i];
+    }
+  }
+  return res;
 }
-
-console.log('encodeToRot13("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"):\n' + encodeToRot13('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'));
-
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -271,7 +263,7 @@ console.log('encodeToRot13("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
  *   isString(new String('test')) => true
  */
 function isString(s) {
-	return typeof s === 'string';
+  return typeof s === 'string' || s instanceof String;
 }
 
 
@@ -300,26 +292,24 @@ function isString(s) {
  *   'K♠' => 51
  */
 function getCardId(card) {
-	let symbol = card.slice(-1), n=card.slice(0, -1), res=-1;
-	if (symbol === '♦') res+=13;
-	if (symbol === '♥') res+=26;
-	if (symbol === '♠') res+=39;
-	if (n==='A') {
-		res++;
-	} else if (n==='J') {
-		res+= 11;
-	} else if (n==='Q') {
-		res+= 12;
-	} else if (n==='K') {
-		res+= 13;
-	} else {
-		res+= +n;
-	}
-	return res;
+  const symbol = card.slice(-1); const n = card.slice(0, -1); let
+    res = -1;
+  if (symbol === '♦') res += 13;
+  if (symbol === '♥') res += 26;
+  if (symbol === '♠') res += 39;
+  if (n === 'A') {
+    res += 1;
+  } else if (n === 'J') {
+    res += 11;
+  } else if (n === 'Q') {
+    res += 12;
+  } else if (n === 'K') {
+    res += 13;
+  } else {
+    res += +n;
+  }
+  return res;
 }
-
-console.log("getCardId('Q♠'): ", getCardId('Q♠'));
-console.log("getCardId('10♥'): ", getCardId('10♥'));
 
 
 module.exports = {

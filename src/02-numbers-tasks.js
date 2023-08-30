@@ -20,7 +20,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(a, b) {
-  return a*b;
+  return a * b;
 }
 
 
@@ -36,7 +36,7 @@ function getRectangleArea(a, b) {
  *   0    => 0
  */
 function getCircleCircumference(r) {
-  return Math.PI*2*r;
+  return Math.PI * 2 * r;
 }
 
 /**
@@ -52,7 +52,7 @@ function getCircleCircumference(r) {
  *  -3, 3  => 0
  */
 function getAverage(a, b) {
-	return (a + b) / 2;
+  return a / 2 + b / 2;
 }
 
 /**
@@ -71,7 +71,7 @@ function getAverage(a, b) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-	return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+  return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 }
 
 /**
@@ -87,7 +87,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-	return -b / a;
+  return -b / a;
 }
 
 
@@ -110,7 +110,9 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-	return Math.acos((x1 * x2 + y1 * y2) / (Math.sqrt(x1 **2 + y1 ** 2) * Math.sqrt(x2 **2 + y2 ** 2)));
+  let r = (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2));
+  r = Math.acos(r);
+  return r;
 }
 
 /**
@@ -126,7 +128,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(n) {
-	return Number.parseInt(n.toString().slice(-1));
+  return Number.parseInt(n.toString().slice(-1), 10);
 }
 
 
@@ -142,7 +144,7 @@ function getLastDigit(n) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(n) {
-	return '' + n;
+  return `${n}`;
 }
 
 /**
@@ -159,7 +161,7 @@ function parseNumberFromString(n) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-	return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 
@@ -181,10 +183,12 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-	return Number.parseInt(Math.round(num / 10 ** pow) + '0'.repeat(pow));
+  return Number.parseInt(Math.round(num / 10 ** pow) + '0'.repeat(pow), 10);
 }
 
-console.log('roundToPowerOfTen(1234, 3):', roundToPowerOfTen(1234, 3));
+/**
+ * console.log('roundToPowerOfTen(1234, 3):', roundToPowerOfTen(1234, 3));
+*/
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -204,13 +208,11 @@ console.log('roundToPowerOfTen(1234, 3):', roundToPowerOfTen(1234, 3));
  *   17 => true
  */
 function isPrime(num) {
-  if (num == 2 || num == 3)
-    return true;
-  if (num <= 1 || num % 2 == 0 || num % 3 == 0)
-    return false;  
-  for (let i = 5; i * i <= num ; i+=6)
-    if (num % i == 0 || num % (i + 2) == 0)
-      return false;
+  if (num === 2 || num === 3) { return true; }
+  if (num <= 1 || num % 2 === 0 || num % 3 === 0) { return false; }
+  for (let i = 5; i * i <= num; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) { return false; }
+  }
   return true;
 }
 
@@ -230,13 +232,14 @@ function isPrime(num) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-	if (+value === 0) return 0;
-	return +value ? +value : def;
+  if (+value === 0) return 0;
+  return +value ? +value : def;
 }
 
-console.log('toNumber(42, 0):', toNumber(42, 0));
-console.log('toNumber(null, 0):', toNumber(null, 0));
-
+/**
+ * console.log('toNumber(42, 0):', toNumber(42, 0));
+ * console.log('toNumber(null, 0):', toNumber(null, 0));
+*/
 
 module.exports = {
   getRectangleArea,
