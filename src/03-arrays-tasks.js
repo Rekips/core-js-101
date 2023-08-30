@@ -21,7 +21,11 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
+<<<<<<< HEAD
   return arr.indexOf(value);
+=======
+	return arr.indexOf(value);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -36,11 +40,19 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
+<<<<<<< HEAD
   const res = [];
   for (let i = 0; i < len; i += 1) {
     res.push(i * 2 + 1);
   }
   return res;
+=======
+	let res = [];
+	for (let i = 0; i< len; i++) {
+		res.push(i*2+1);
+	}
+	return res;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -57,7 +69,11 @@ function generateOdds(len) {
  *    [] => []
  */
 function doubleArray(arr) {
+<<<<<<< HEAD
   return arr.concat(arr);
+=======
+	return arr.concat(arr);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -73,6 +89,7 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
+<<<<<<< HEAD
   const r = [];
   for (let i = 0; i < arr.length; i += 1) {
     if (arr[i] > 0) {
@@ -80,6 +97,15 @@ function getArrayOfPositives(arr) {
     }
   }
   return r;
+=======
+	let r = [];
+	for (let i of arr) {
+		if (i > 0) {
+			r.push(i);
+		}
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -94,6 +120,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
 function getArrayOfStrings(arr) {
+<<<<<<< HEAD
   const r = [];
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] === 'string') {
@@ -101,6 +128,15 @@ function getArrayOfStrings(arr) {
     }
   }
   return r;
+=======
+	let r = [];
+	for (let i of arr) {
+		if (typeof i === 'string') {
+			r.push(i);
+		}
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -117,6 +153,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
+<<<<<<< HEAD
   const r = [];
   for (let i = 0; i < arr.length; i += 1) {
     if (arr[i]) {
@@ -124,6 +161,15 @@ function removeFalsyValues(arr) {
     }
   }
   return r;
+=======
+	let r = [];
+	for (let i of arr) {
+		if (i) {
+			r.push(i);
+		}
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -138,11 +184,19 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
+<<<<<<< HEAD
   const r = [];
   for (let i = 0; i < arr.length; i += 1) {
     r.push(arr[i].toUpperCase());
   }
   return r;
+=======
+	let r = [];
+	for (let i of arr) {
+		r.push(i.toUpperCase());
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -157,11 +211,19 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
+<<<<<<< HEAD
   const r = [];
   for (let i = 0; i < arr.length; i += 1) {
     r.push(arr[i].length);
   }
   return r;
+=======
+	let r = [];
+	for (let i of arr) {
+		r.push(i.length);
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -176,7 +238,11 @@ function getStringsLength(arr) {
  *    [ 1, 'b', 'c'], 'x', 0  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
+<<<<<<< HEAD
   arr.splice(index, 0, item);
+=======
+	arr.splice(index, 0, item);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -190,7 +256,11 @@ function insertItem(arr, item, index) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
 function getHead(arr, n) {
+<<<<<<< HEAD
   return arr.slice(0, n);
+=======
+	return arr.slice(n-1);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -205,7 +275,11 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
+<<<<<<< HEAD
   return arr.slice(-n);
+=======
+	return arr.slice(-n);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -230,6 +304,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
+<<<<<<< HEAD
   let r = '';
   for (let p = 0; p < arr.length; p += 1) {
     for (let n = 0; n < arr[p].length; n += 1) {
@@ -241,6 +316,17 @@ function toCsvText(arr) {
   }
   r = r.slice(0, -1);
   return r;
+=======
+	let r = '';
+	for (let p of arr) {
+		for (let n of p) {
+			r += n + ',';
+		}
+		r += '\n';
+	}
+	r = r.slice(0, -2);
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -255,7 +341,11 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
+<<<<<<< HEAD
   return arr.map((x) => x * x);
+=======
+	return arr.map((x) => x * x);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -273,6 +363,7 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
+<<<<<<< HEAD
 
 function getMovingSum(arr) {
   let sum = 0;
@@ -280,6 +371,15 @@ function getMovingSum(arr) {
     sum += x;
     return sum;
   });
+=======
+ 
+function getMovingSum(arr) {
+	let sum = 0;
+	return arr.map((x) => {
+		sum += x;
+		return sum;
+	});
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -294,11 +394,19 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
+<<<<<<< HEAD
   const r = [];
   for (let i = 1; i < arr.length; i += 2) {
     r.push(arr[i]);
   }
   return r;
+=======
+	let r = [];
+	for (let i = 1; i < arr.length; i += 2) {
+		r.push(arr[i]);
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -317,12 +425,21 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
+<<<<<<< HEAD
   for (let i = arr.length - 1; i >= 0; i -= 1) {
     for (let p = 0; p < i; p += 1) {
       arr.splice(i, 0, arr[i]);
     }
   }
   return arr;
+=======
+	for (let i = arr.length - 1; i >= 0; i--) {
+		for (let p = 0; p < i; p++) {
+			arr.splice(i, 0, arr[i]);
+		}
+	}
+	return arr;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -339,7 +456,11 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
+<<<<<<< HEAD
   return arr.sort((a, b) => b - a).slice(0, 3);
+=======
+	return arr.sort((a, b) => b - a).slice(0,3);
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -356,11 +477,19 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
+<<<<<<< HEAD
   let r = 0;
   for (let i = 0; i < arr.length; i += 1) {
     if (arr[i] > 0) r += 1;
   }
   return r;
+=======
+	let r = 0;
+	for (let x of arr) {
+		if (x > 0) r++;
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 /**
  * Sorts digit names
@@ -376,6 +505,7 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
+<<<<<<< HEAD
   const r = [];
   const res = [];
   for (let x = 0; x < arr.length; x += 1) {
@@ -404,6 +534,36 @@ function sortDigitNamesByNumericOrder(arr) {
     if (r[x] === 9) res.push('nine');
   }
   return res;
+=======
+	let r = [];
+	let	res = [];
+	for (let x of arr) {
+		if (x === 'zero') r.push(0);
+		if (x === 'one') r.push(1);
+		if (x === 'two') r.push(2);
+		if (x === 'three') r.push(3);
+		if (x === 'four') r.push(4);
+		if (x === 'five') r.push(5);
+		if (x === 'six') r.push(6);
+		if (x === 'seven') r.push(7);
+		if (x === 'eight') r.push(8);
+		if (x === 'nine') r.push(9);
+	}
+	r.sort((a,b)=>a-b);
+	for (let x of r) {
+		if (x === 0) x = res.push('zero');
+		if (x === 1) x = res.push('one');
+		if (x === 2) x = res.push('two');
+		if (x === 3) x = res.push('three');
+		if (x === 4) x = res.push('four');
+		if (x === 5) x = res.push('five');
+		if (x === 6) x = res.push('six');
+		if (x === 7) x = res.push('seven');
+		if (x === 8) x = res.push('eight');
+		if (x === 9) x = res.push('nine');
+	}
+	return res;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -419,11 +579,17 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
+<<<<<<< HEAD
   let sum = 0;
   for (let x = 0; x < arr.length; x += 1) {
     sum += arr[x];
   }
   return sum;
+=======
+	let sum = 0;
+	arr.map((x) => sum += x);
+	return sum;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -439,11 +605,19 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
+<<<<<<< HEAD
   let sum = 0;
   for (let x = 0; x < arr.length; x += 1) {
     if (!arr[x]) sum += 1;
   }
   return sum;
+=======
+	let sum = 0;
+	arr.map((x) => {
+		if (!x) sum +=1;
+	});
+	return sum;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -461,11 +635,19 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurrences(arr, item) {
+<<<<<<< HEAD
   let sum = 0;
   for (let x = 0; x < arr.length; x += 1) {
     if (arr[x] === item) sum += 1;
   }
   return sum;
+=======
+	let sum = 0;
+	arr.map((x) => {
+		if (x === item) sum +=1;
+	});
+	return sum;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -480,6 +662,7 @@ function findAllOccurrences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
+<<<<<<< HEAD
   let s = '';
   for (let x = 0; x < arr.length; x += 1) {
     s += arr[x];
@@ -487,6 +670,16 @@ function toStringList(arr) {
   }
   s = s.slice(0, -1);
   return s;
+=======
+	let s = '';
+	arr.map((x) => {
+		s += x+',';
+	});
+	if (arr[arr.length-1] !== '') {
+		s.slice(0,-1);
+	}
+	return s;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -515,9 +708,14 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
+<<<<<<< HEAD
 function sortCitiesArray(/* arr */) {
   /* return arr.sort(); */
   throw new Error('Not implemented');
+=======
+function sortCitiesArray(arr) {
+	return arr.sort();
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -539,6 +737,7 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
+<<<<<<< HEAD
   const r = [];
   for (let h = 0; h < n; h += 1) {
     r[h] = [];
@@ -548,6 +747,16 @@ function getIdentityMatrix(n) {
     }
   }
   return r;
+=======
+	let r = [];
+	for (let h = 0; h < n; h++) {
+		r[h] = [];
+		for (let w = 0; w < n; w++) {
+			r[h][w] = 1;
+		}
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 
@@ -565,11 +774,19 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
+<<<<<<< HEAD
   const r = [];
   for (let x = start; x <= end; x += 1) {
     r.push(x);
   }
   return r;
+=======
+	let r = [];
+	for (let x = start; x <= end; x++) {
+		r.push(x);
+	}
+	return r;
+>>>>>>> bb107b79715fd9299a0143d4042835be121286a5
 }
 
 /**
@@ -617,7 +834,7 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
+function group(array, keySelector, valueSelector) {
   throw new Error('Not implemented');
 }
 
